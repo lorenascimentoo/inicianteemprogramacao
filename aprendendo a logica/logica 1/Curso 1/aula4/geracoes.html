@@ -1,0 +1,17 @@
+<meta charset="UTF-8"/>
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+    function mostra(geracoes){
+        document.write("Já se passaram "+geracoes+" gerações.");
+    }
+
+    var anoAtual = 2020;
+    var mediaIdade = 28;
+
+    var qtdGeracoes = anoAtual / mediaIdade;
+
+    mostra(Math.round(qtdGeracoes));
+    pulaLinha();
+</script>
