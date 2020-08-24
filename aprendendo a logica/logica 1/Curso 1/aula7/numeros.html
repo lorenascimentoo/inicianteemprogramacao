@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+    /* MOSTRA OS NÚMEROS DE 30 À 40, EXCETO O 33 E 37
+    var contador = 30;
+    while(contador <=40){
+        if(contador == 33 || contador == 37){
+            mostra("");
+        } else{
+            mostra(contador);
+        }
+        contador = contador+1;
+    }*/
+
+    var contador = 20;
+    while(contador >= 0){
+        mostra(contador);
+        contador = contador-1;
+    }
+    mostra("******** F I M ********");
+</script>
