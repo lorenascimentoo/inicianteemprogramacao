@@ -1,0 +1,50 @@
+<canvas width="600" height="400"></canvas>
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    function setTitulo(texto, x, y,font){
+       pincel.font = font;
+       pincel.fillStyle = 'black';
+       pincel.fillText(texto,x,y);
+    }
+
+    function desenhaGrafico(x,y,tamanho,cor){
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect (x,y,50,tamanho);
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,tamanho);
+        pincel.fill();
+    }
+    function desenhaGraficoLegenda(x,y,tamanho,cor){
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect (x,y,tamanho,tamanho);
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,tamanho,tamanho);
+        pincel.fill();
+    }
+    function setGrafico(texto,x,y,crhome,firefox,safari,outros){
+        setTitulo(texto, x,y,'20px Georgia');
+        y=y+10;
+        desenhaGrafico(x,y,crhome,'blue');
+        desenhaGrafico(x,y+crhome,firefox,'green');
+        desenhaGrafico(x,y+crhome+firefox,safari,'yellow');
+        desenhaGrafico(x,y+crhome+firefox+safari,outros,'red');
+    }
+
+    setGrafico(2015,20,20,50,25,20,5);
+    setGrafico(2016,90,20,65,20,13,2);
+    setGrafico(2017,160,20,20,50,15,15);
+
+    setTitulo('*******LEGENDA*******', 60,180,'16px Georgia');
+    desenhaGraficoLegenda(20,190,20,'blue');
+    setTitulo('Usuários do Crhome', 50,205,'14px Georgia');
+    desenhaGraficoLegenda(20,210,20,'green');
+    setTitulo('Usuários do Firefox', 50,225,'14px Georgia');
+    desenhaGraficoLegenda(20,230,20,'yellow');
+    setTitulo('Usuários do Safari', 50,245,'14px Georgia');
+    desenhaGraficoLegenda(20,250,20,'red');
+    setTitulo('Usuários de Outros', 50,265,'14px Georgia');
+</script>

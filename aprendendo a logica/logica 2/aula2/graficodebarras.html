@@ -1,0 +1,33 @@
+
+<canvas width="600" height="400"></canvas>
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    function setTitulo(texto, x, y){
+       pincel.font ='20px Georgia';
+       pincel.fillStyle = 'black';
+       pincel.fillText(texto,x,y);
+    }
+
+    function desenhaGrafico(x,y,tamanho,cor){
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect (x,y,50,tamanho);
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,tamanho);
+        pincel.fill();
+    }
+
+    setTitulo(2015, 20,20);
+    desenhaGrafico(20,30,50,'blue');
+    desenhaGrafico(20,80,25,'green');
+    desenhaGrafico(20,105,20,'yellow');
+    desenhaGrafico(20,125,5,'red');
+
+    setTitulo(2016, 90,20);
+    desenhaGrafico(90,30,65,'blue');
+    desenhaGrafico(90,95,20,'green');
+    desenhaGrafico(90,115,13,'yellow');
+    desenhaGrafico(90,128,2,'red');
+</script>
